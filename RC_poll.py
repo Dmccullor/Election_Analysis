@@ -25,10 +25,8 @@ eliminated_candidates = []
 eliminated_candidate = ""
 lowest_percentage = 0
 
-#Initiate round counter
-round = 0
 
-def vote_retrieval(*eliminated_candidates, round):
+def vote_retrieval(*eliminated_candidates):
     #Initialize a total vote counter.
     total_votes = 0
     #Candidate options and candidate votes
@@ -42,13 +40,15 @@ def vote_retrieval(*eliminated_candidates, round):
         headers = next(file_reader)
         #Print each row in the CSV file.
         for row in file_reader:
+            round = 0
             #Add to the total vote count.
             total_votes += 1
             #Get the candidate name for each row.
-            if row[2] in eliminated_candidates:
+            candidate_name = row[2]
+
+            while candidate_name in eliminated_candidates:
+                round +=1
                 candidate_name = row[2 + round]
-            else:
-                candidate_name = row[2]
 
             #If the candidate does not match any existing cnadidate add it to the candidate list.
             if candidate_name not in candidate_options:
@@ -62,6 +62,7 @@ def vote_retrieval(*eliminated_candidates, round):
     return total_votes, candidate_votes, candidate_options
 
 total_votes, candidate_votes, candidate_options = vote_retrieval()
+num_of_candidates = len(candidate_options)
 
 def winner_calculation(total_votes, candidate_votes):
     for candidate_name in candidate_votes:
@@ -89,8 +90,8 @@ def winner_calculation(total_votes, candidate_votes):
 #Loop through candidates
 #Add +1 to round counter after each round
 #Add bottom percentage candidatte to eliminated candidates
-for i in len(candidate_options):
-    total_votes, candidate_votes, candidate_options = vote_retrieval(eliminated_candidates, round)
+for i in num_of_candidates:
+    total_votes, candidate_votes, candidate_options = vote_retrieval(eliminated_candidates)
     winning_count, winning_percentage, winning_candidate = winner_calculation(total_votes, candidate_votes)
     eliminated_candidates.append(eliminated_candidates)
     round +=1

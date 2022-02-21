@@ -1,6 +1,6 @@
 # Election_Analysis
-##Project Overview
-The Colorado Baord of Elections has given me the following tasks to complete the election audit of a recent local congressional election.
+## Project Overview
+The Colorado Board of Elections has given me the following tasks to complete the election audit of a recent local congressional election.
 
 1. Calculate the total number of votes cast.
 2. Get a complete list of candidates who received votes.
@@ -56,11 +56,11 @@ file_to_save = os.path.join("analysis", "election_analysis.txt")
 Just as before, change the words within quotes to the file that sould be written to and its parent folder. Once these changes are made, the script will be ready to run a thorough analysis and audit of any election.
 
 
-#Project Update: Ranked-Choice Election Analysis
+# Project Update: Ranked-Choice Election Analysis
 
 I have reworked the code in a separate file titled “RCpoll.py,” which writes the election results to a separate text file: “rc_election_analysis.txt.”
 
-The procedure for ranked-choice voting can be found <a href=” https://ballotpedia.org/Ranked-choice_voting_(RCV” target=”_blank”>here</a>.
+The procedure for ranked-choice voting can be found <a href=”https://ballotpedia.org/Ranked-choice_voting_(RCV” target=”_blank”>here</a>.
 
 A random second and third choice candidate was generated randomly for each ballot based on the ballot’s ID number. The new reference .csv was compiled in Pandas, so that it could be read into the reworked election analysis python file.
 

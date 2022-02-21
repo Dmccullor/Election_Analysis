@@ -15,7 +15,7 @@ import os
 file_to_load = os.path.join("Resources", "rc_election_results.csv")
 
 #Assign a variable to save the file to a path.
-file_to_save = os.path.join("rc_election_analysis.txt")
+file_to_save = os.path.join("Resources", "rc_election_analysis.txt")
 
 #Declare eliminated candidates list
 eliminated_candidates = []

@@ -58,7 +58,7 @@ Just as before, change the words within quotes to the file that sould be written
 
 # Project Update: Ranked-Choice Election Analysis
 
-I have reworked the code in a separate file titled “RCpoll.py,” which writes the election results to a separate text file: “rc_election_analysis.txt.”
+I have reworked the code in a separate file titled “RCpoll.py”, which writes the election results to a separate text file: “rc_election_analysis.txt”.
 
 The procedure for ranked-choice voting can be found <a href=”https://ballotpedia.org/Ranked-choice_voting_(RCV” target=”_blank”>here</a>.
 
